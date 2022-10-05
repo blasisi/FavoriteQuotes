@@ -1,0 +1,35 @@
+h1{
+    color:rgb(123, 60, 60);
+    font-size: 40px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.QuoteContainer {
+text-align: center;
+}
+
+button{
+width:250px;
+height: 80px;
+background-color: teal;
+color: white;
+height: 54px;
+margin: 0 auto;
+margin-right: 10px;
+position:relative;
+display:inline-block;
+text-align: center;
+
+
+}
+
+button:hover{
+    background-color: hotpink;
+}
+
+P{
+    font-size: 40px;
+    text-align: center;
+
+}
