@@ -1,52 +1,50 @@
-// import quote from "..FavoriteQuotes/quoteApi.json";
-
 const quoteText = document.querySelector(".quote");
 // const authorName =document.querySelector("author");
 quoteBtn = document.getElementById("btn");
 // console.log(quoteBtn)
 
-function randomQuoteSelect() {
-    quoteText.innerText = 'Loading....'
+async function randomQuoteSelect() {
+  quoteText.innerText = 'Loading....'
 
-    const quotes = fetch("./quoteApi.json")
-        .then(res => res.json())
-        .then(result =>  { //fetch return  a promiseresorces from the api
-        console.log(result)
-        // quoteText.innerText = JSON.stringify(result, null, 2)
-       
-        });
-         
-          if(quoteText > 0 ){
-        let arrayIndex = Math.floor(Math.random() * quotes.length);
-         console.log(Object.keys(quoteText.innerText = quotes[0].quote.quote))
-          quoteText.innerText = quotes[0].quote
-          }
-        // console.log(quoteText.textContent = quotes[arrayIndex]);
-        // quoteText.textContent = quotes.quote
+  const quotes = await fetch("./quoteApi.json")
+    .then(res => res.json())
+    .then(result => { //fetch return  a promiseresorces from the api
+      return result
 
-        // quoteText.textContent = dataApi;
-   
-    // quoteBtn.addEventListener("click", randomQuoteSelect)
+    });
+
+  if (quoteText > 0) {
+    console.log("quoteText is greater 0")
+
+  }
+  console.log(quotes)
+  let arrayIndex = Math.floor(Math.random() * quotes.length);
+  console.log(arrayIndex);
+  // console.log(quotes[arrayIndex].quote)
+  quoteText.innerText = quotes[arrayIndex].quote
 }
-// randomQuoteSelect();
-//  document.getElementById("btn").addEventListener("click", randomQuoteSelect)
 quoteBtn.addEventListener("click", randomQuoteSelect)
 
-// 
 
-// function randomQuoteSelect() { //reference the value in the array
-//     const  randomQuoteNum = Math.floor(Math.random() * (randomQuote.length));//return math floor to round number doward to nearst interger
+//author
+async function authorQuoteSelect() {
+  authorName.innerText = 'Loading....'
 
-// document.getElementById("quoteDisplay").innerHTML = randomQuote[randomQuoteNum];
+  const author = await fetch("./quoteApi.json")
+    .then(res => res.json())
+    .then(result => { //fetch return  a promiseresorces from the api
+      return result
 
-// }
+    });
 
+  if (quoteText > 0) {
+    console.log("quoteText is greater 0")
 
-// function generateQuote() {//created function
-
-//     const randomQuoteNum = randomQuoteSelect(randomQuote.length);
-//     document.getElementById("quotesAutors").innerHTML = '"' + randomQuote(randomQuoteNum).autor,
-//         +'"'; //
-//     document.getElementById("quotes").innerHTML = "_", randomQuote(randomQuoteNum).quote;
-
-// }
+  }
+  console.log(quotes)
+  let arrayIndex = Math.floor(Math.random() * quotes.length);
+  console.log(arrayIndex);
+  // console.log(quotes[arrayIndex].quote)
+  quoteText.innerText = quotes[arrayIndex].quote
+}
+quoteBtn.addEventListener("click", randomQuoteSelect)
